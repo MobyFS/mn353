@@ -1,0 +1,774 @@
+###############################################################################
+#
+# IAR ELF Linker V7.70.1.11437/W32 for ARM                17/Mar/2021  17:50:03
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  E:\Zh\Cortex\soft\mn353_mdr\Debug\Exe\mn353.out
+#    Map file     =  E:\Zh\Cortex\soft\mn353_mdr\Debug\List\mn353.map
+#    Command line =  
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\cexit.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\cmain.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\console.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\croutine.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\cstartup_M.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\data_init.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\event_groups.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\exit.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\gunzip.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\heap_2.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\image.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\ks.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\lcd.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\led.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\list.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\low_level_init.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\lz77_init.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\lz77_init_single.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\main.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\MDR32F9Qx_port.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\MDR32F9Qx_rst_clk.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\MDR32F9Qx_ssp.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\MDR32F9Qx_uart.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\mlink.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\otimer.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\output.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\port.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\portasm.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\queue.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\restart.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\serial.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\spi.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\stream_buffer.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\tasks.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\timers.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\vector_table_M.o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj\XXexit.o -o
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\Exe\mn353.out --map
+#        E:\Zh\Cortex\soft\mn353_mdr\Debug\List\mn353.map --config "C:\Program
+#        Files (x86)\IAR Systems\Embedded Workbench
+#        7.5\arm\config\linker\Milandr\MDR1986VE9x\MDR1986VE9x.icf"
+#        --semihosting --entry __iar_program_start --redirect
+#        __write=__write_buffered --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A0":  place at 0x08000000 { ro section .intvec };
+"P1":  place in [from 0x08000000 to 0x0801ffff] { ro };
+"P2":  place in [from 0x20000000 to 0x20007fff] { rw, block CSTACK, block HEAP };
+initialize by copy { rw };
+ { section .intvec };
+
+  Section            Kind        Address    Size  Object
+  -------            ----        -------    ----  ------
+"A0":                                       0xc0
+  .intvec            ro code  0x08000000    0xc0  vector_table_M.o [1]
+                            - 0x080000c0    0xc0
+
+"P1":                                     0x6f38
+  .text              ro code  0x080000c0   0xcc8  tasks.o [1]
+  .text              ro code  0x08000d88   0x14c  heap_2.o [1]
+  .text              ro code  0x08000ed4    0x98  list.o [1]
+  .text              ro code  0x08000f6c    0x66  ABImemset.o [4]
+  .rodata            const    0x08000fd2     0x2  heap_2.o [1]
+  .text              ro code  0x08000fd4   0x208  port.o [1]
+  .text              ro code  0x080011dc   0x43a  timers.o [1]
+  .text              ro code  0x08001618    0x54  port.o [1]
+  CODE               ro code  0x0800166c    0x88  portasm.o [1]
+  .text              ro code  0x080016f4   0x65e  queue.o [1]
+  .text              ro code  0x08001d54    0x76  ABImemcpy_unaligned.o [4]
+  .text              ro code  0x08001dcc   0xc9c  mlink.o [1]
+  .text              ro code  0x08002a68     0x6  output.o [1]
+  .text              ro code  0x08002a70   0xa70  output.o [1]
+  .text              ro code  0x080034e0    0x24  ABIassert.o [5]
+  .text              ro code  0x08003504   0x120  otimer.o [1]
+  .text              ro code  0x08003624    0x12  output.o [1]
+  .text              ro code  0x08003638   0x710  console.o [1]
+  .text              ro code  0x08003d48     0xe  output.o [1]
+  .text              ro code  0x08003d58    0x8c  restart.o [1]
+  .text              ro code  0x08003de4     0xe  output.o [1]
+  .text              ro code  0x08003df2     0xe  mlink.o [1]
+  .text              ro code  0x08003e00   0x2ce  serial.o [1]
+  .text              ro code  0x080040d0    0xa0  ks.o [1]
+  .text              ro code  0x08004170     0x6  abort.o [3]
+  .text              ro code  0x08004178   0x10c  MDR32F9Qx_uart.o [1]
+  .text              ro code  0x08004284   0x1ac  MDR32F9Qx_rst_clk.o [1]
+  .text              ro code  0x08004430   0x138  MDR32F9Qx_port.o [1]
+  .text              ro code  0x08004568     0xa  isdigit.o [3]
+  .text              ro code  0x08004574     0xc  XXexit.o [1]
+  .text              ro code  0x08004580   0x486  lcd.o [1]
+  .text              ro code  0x08004a08   0x2c4  image.o [1]
+  .rodata            const    0x08004ccc   0x3c0  image.o [1]
+  .rodata            const    0x0800508c   0x3c0  image.o [1]
+  .rodata            const    0x0800544c   0x3c0  image.o [1]
+  .rodata            const    0x0800580c   0x3c0  image.o [1]
+  .text              ro code  0x08005bcc   0x380  main.o [1]
+  .text              ro code  0x08005f4c   0x2ac  spi.o [1]
+  .text              ro code  0x080061f8    0x94  MDR32F9Qx_ssp.o [1]
+  .rodata            const    0x0800628c   0x100  ks.o [1]
+  .rodata            const    0x0800638c   0x100  ks.o [1]
+  .rodata            const    0x0800648c    0xfc  main.o [1]
+  .text              ro code  0x08006588    0xa4  led.o [1]
+  .text              ro code  0x0800662c    0x78  low_level_init.o [1]
+  .rodata            const    0x080066a4    0x74  output.o [1]
+  .rodata            const    0x08006718    0x6c  main.o [1]
+  .rodata            const    0x08006784    0x68  restart.o [1]
+  .text              ro code  0x080067ec    0x40  zero_init3.o [4]
+  .rodata            const    0x0800682c    0x3c  mlink.o [1]
+  .text              ro code  0x08006868    0x38  data_init.o [1]
+  .rodata            const    0x080068a0    0x2c  output.o [1]
+  .text              ro code  0x080068cc    0x2c  copy_init3.o [4]
+  Initializer bytes  const    0x080068f8    0x2c  <for P2-1>
+  .rodata            const    0x08006924    0x28  mlink.o [1]
+  .rodata            const    0x0800694c    0x28  mlink.o [1]
+  .rodata            const    0x08006974    0x24  mlink.o [1]
+  .rodata            const    0x08006998    0x24  output.o [1]
+  .rodata            const    0x080069bc    0x24  spi.o [1]
+  .iar.init_table    const    0x080069e0    0x24  - Linker created -
+  .rodata            const    0x08006a04    0x20  main.o [1]
+  .rodata            const    0x08006a24    0x20  main.o [1]
+  .rodata            const    0x08006a44    0x20  output.o [1]
+  .rodata            const    0x08006a64    0x20  output.o [1]
+  .rodata            const    0x08006a84    0x20  output.o [1]
+  .rodata            const    0x08006aa4    0x1c  console.o [1]
+  .rodata            const    0x08006ac0    0x1c  mlink.o [1]
+  .rodata            const    0x08006adc    0x1c  mlink.o [1]
+  .rodata            const    0x08006af8    0x1c  mlink.o [1]
+  .rodata            const    0x08006b14    0x1c  output.o [1]
+  .rodata            const    0x08006b30    0x1c  output.o [1]
+  .rodata            const    0x08006b4c    0x1c  output.o [1]
+  .rodata            const    0x08006b68    0x1c  output.o [1]
+  .rodata            const    0x08006b84    0x1c  restart.o [1]
+  .text              ro code  0x08006ba0    0x1a  cmain.o [1]
+  .text              ro code  0x08006bba     0x8  exit.o [1]
+  .text              ro code  0x08006bc4     0xa  cexit.o [1]
+  .rodata            const    0x08006bd0    0x18  mlink.o [1]
+  .rodata            const    0x08006be8    0x18  mlink.o [1]
+  .rodata            const    0x08006c00    0x18  output.o [1]
+  .rodata            const    0x08006c18    0x18  output.o [1]
+  .rodata            const    0x08006c30    0x18  output.o [1]
+  .rodata            const    0x08006c48    0x18  output.o [1]
+  .rodata            const    0x08006c60    0x18  output.o [1]
+  .rodata            const    0x08006c78    0x18  output.o [1]
+  .rodata            const    0x08006c90    0x18  restart.o [1]
+  .rodata            const    0x08006ca8    0x18  restart.o [1]
+  .rodata            const    0x08006cc0    0x14  console.o [1]
+  .rodata            const    0x08006cd4    0x14  console.o [1]
+  .rodata            const    0x08006ce8    0x14  console.o [1]
+  .rodata            const    0x08006cfc    0x14  main.o [1]
+  .rodata            const    0x08006d10    0x14  main.o [1]
+  .rodata            const    0x08006d24    0x14  main.o [1]
+  .rodata            const    0x08006d38    0x14  main.o [1]
+  .rodata            const    0x08006d4c    0x14  mlink.o [1]
+  .rodata            const    0x08006d60    0x14  restart.o [1]
+  .rodata            const    0x08006d74    0x14  restart.o [1]
+  .rodata            const    0x08006d88    0x14  spi.o [1]
+  .rodata            const    0x08006d9c    0x10  console.o [1]
+  .rodata            const    0x08006dac    0x10  console.o [1]
+  .rodata            const    0x08006dbc    0x10  console.o [1]
+  .rodata            const    0x08006dcc    0x10  main.o [1]
+  .rodata            const    0x08006ddc    0x10  main.o [1]
+  .rodata            const    0x08006dec    0x10  main.o [1]
+  .rodata            const    0x08006dfc    0x10  output.o [1]
+  .rodata            const    0x08006e0c    0x10  output.o [1]
+  .rodata            const    0x08006e1c    0x10  restart.o [1]
+  .rodata            const    0x08006e2c    0x10  restart.o [1]
+  .rodata            const    0x08006e3c    0x10  restart.o [1]
+  .rodata            const    0x08006e4c    0x10  restart.o [1]
+  .rodata            const    0x08006e5c    0x10  restart.o [1]
+  .rodata            const    0x08006e6c     0xc  console.o [1]
+  .rodata            const    0x08006e78     0xc  console.o [1]
+  .rodata            const    0x08006e84     0xc  main.o [1]
+  .rodata            const    0x08006e90     0xc  otimer.o [1]
+  .rodata            const    0x08006e9c     0xc  output.o [1]
+  .rodata            const    0x08006ea8     0xc  output.o [1]
+  .rodata            const    0x08006eb4     0xc  restart.o [1]
+  .rodata            const    0x08006ec0     0xc  restart.o [1]
+  .rodata            const    0x08006ecc     0xc  restart.o [1]
+  .rodata            const    0x08006ed8     0xc  restart.o [1]
+  .text              ro code  0x08006ee4     0xc  cstartup_M.o [1]
+  .text              ro code  0x08006ef0     0xc  vector_table_M.o [1]
+  .text              ro code  0x08006efc     0xc  vector_table_M.o [1]
+  .text              ro code  0x08006f08     0xc  vector_table_M.o [1]
+  .text              ro code  0x08006f14     0xc  vector_table_M.o [1]
+  .rodata            const    0x08006f20     0x8  main.o [1]
+  .rodata            const    0x08006f28     0x8  main.o [1]
+  .rodata            const    0x08006f30     0x8  main.o [1]
+  .rodata            const    0x08006f38     0x8  main.o [1]
+  .rodata            const    0x08006f40     0x8  main.o [1]
+  .rodata            const    0x08006f48     0x8  main.o [1]
+  .rodata            const    0x08006f50     0x8  main.o [1]
+  .rodata            const    0x08006f58     0x8  mlink.o [1]
+  .rodata            const    0x08006f60     0x8  mlink.o [1]
+  .rodata            const    0x08006f68     0x8  output.o [1]
+  .rodata            const    0x08006f70     0x8  output.o [1]
+  .rodata            const    0x08006f78     0x8  output.o [1]
+  .rodata            const    0x08006f80     0x8  output.o [1]
+  .rodata            const    0x08006f88     0x8  restart.o [1]
+  .rodata            const    0x08006f90     0x8  restart.o [1]
+  .rodata            const    0x08006f98     0x8  tasks.o [1]
+  .rodata            const    0x08006fa0     0x8  timers.o [1]
+  .text              ro code  0x08006fa8     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fac     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fb0     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fb4     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fb8     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fbc     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fc0     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fc4     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fc8     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fcc     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fd0     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fd4     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fd8     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fdc     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fe0     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fe4     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fe8     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006fec     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006ff0     0x4  vector_table_M.o [1]
+  .text              ro code  0x08006ff4     0x4  vector_table_M.o [1]
+  .rodata            const    0x08006ff8     0x0  zero_init3.o [4]
+  .rodata            const    0x08006ff8     0x0  copy_init3.o [4]
+                            - 0x08006ff8  0x6f38
+
+"P2", part 1 of 3:                          0x2c
+  P2-1                        0x20000000    0x2c  <Init block>
+    .data            inited   0x20000000     0x4  heap_2.o [1]
+    .data            inited   0x20000004    0x10  image.o [1]
+    .data            inited   0x20000014    0x10  mlink.o [1]
+    .data            inited   0x20000024     0x4  port.o [1]
+    .data            inited   0x20000028     0x4  tasks.o [1]
+                            - 0x2000002c    0x2c
+
+"P2", part 2 of 3:                        0x1000
+  CSTACK                      0x20000030  0x1000  <Block>
+    CSTACK           uninit   0x20000030  0x1000  <Block tail>
+                            - 0x20001030  0x1000
+
+"P2", part 3 of 3:                        0x569c
+  .bss               zero     0x20001030  0x4400  heap_2.o [1]
+  .bss               zero     0x20005430   0x894  output.o [1]
+  .bss               zero     0x20005cc4   0x400  output.o [1]
+  .bss               zero     0x200060c4   0x20c  console.o [1]
+  .bss               zero     0x200062d0   0x20c  serial.o [1]
+  .bss               zero     0x200064dc    0x64  tasks.o [1]
+  .bss               zero     0x20006540    0x4c  spi.o [1]
+  .bss               zero     0x2000658c    0x14  tasks.o [1]
+  .bss               zero     0x200065a0    0x14  tasks.o [1]
+  .bss               zero     0x200065b4    0x14  tasks.o [1]
+  .bss               zero     0x200065c8    0x14  tasks.o [1]
+  .bss               zero     0x200065dc    0x14  tasks.o [1]
+  .bss               zero     0x200065f0    0x14  timers.o [1]
+  .bss               zero     0x20006604    0x14  timers.o [1]
+  .bss               zero     0x20006618    0x10  main.o [1]
+  .bss               zero     0x20006628     0xc  otimer.o [1]
+  .bss               zero     0x20006634     0x8  heap_2.o [1]
+  .bss               zero     0x2000663c     0x8  heap_2.o [1]
+  .bss               zero     0x20006644     0x8  mlink.o [1]
+  .bss               zero     0x2000664c     0x8  output.o [1]
+  .bss               zero     0x20006654     0x4  console.o [1]
+  .bss               zero     0x20006658     0x4  console.o [1]
+  .bss               zero     0x2000665c     0x4  heap_2.o [1]
+  .bss               zero     0x20006660     0x4  led.o [1]
+  .bss               zero     0x20006664     0x4  main.o [1]
+  .bss               zero     0x20006668     0x4  port.o [1]
+  .bss               zero     0x2000666c     0x4  port.o [1]
+  .bss               zero     0x20006670     0x4  port.o [1]
+  .bss               zero     0x20006674     0x4  serial.o [1]
+  .bss               zero     0x20006678     0x4  tasks.o [1]
+  .bss               zero     0x2000667c     0x4  tasks.o [1]
+  .bss               zero     0x20006680     0x4  tasks.o [1]
+  .bss               zero     0x20006684     0x4  tasks.o [1]
+  .bss               zero     0x20006688     0x4  tasks.o [1]
+  .bss               zero     0x2000668c     0x4  tasks.o [1]
+  .bss               zero     0x20006690     0x4  tasks.o [1]
+  .bss               zero     0x20006694     0x4  tasks.o [1]
+  .bss               zero     0x20006698     0x4  tasks.o [1]
+  .bss               zero     0x2000669c     0x4  tasks.o [1]
+  .bss               zero     0x200066a0     0x4  tasks.o [1]
+  .bss               zero     0x200066a4     0x4  tasks.o [1]
+  .bss               zero     0x200066a8     0x4  tasks.o [1]
+  .bss               zero     0x200066ac     0x4  tasks.o [1]
+  .bss               zero     0x200066b0     0x4  tasks.o [1]
+  .bss               zero     0x200066b4     0x4  timers.o [1]
+  .bss               zero     0x200066b8     0x4  timers.o [1]
+  .bss               zero     0x200066bc     0x4  timers.o [1]
+  .bss               zero     0x200066c0     0x4  timers.o [1]
+  .bss               zero     0x200066c4     0x4  timers.o [1]
+  .bss               zero     0x200066c8     0x1  console.o [1]
+  .bss               zero     0x200066c9     0x1  lcd.o [1]
+  .bss               zero     0x200066ca     0x1  lcd.o [1]
+                            - 0x200066cb  0x569b
+
+
+*******************************************************************************
+*** INIT TABLE
+***
+
+          Address     Size
+          -------     ----
+Zero (__iar_zero_init3)
+    1 destination range, total size 0x569b:
+          0x20001030  0x569b
+
+Copy (__iar_copy_init3)
+    1 source range, total size 0x2c:
+          0x080068f8    0x2c
+    1 destination range, total size 0x2c:
+          0x20000000    0x2c
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  ro data  rw data
+    ------                 -------  -------  -------
+E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj: [1]
+    MDR32F9Qx_port.o           312
+    MDR32F9Qx_rst_clk.o        428
+    MDR32F9Qx_ssp.o            148
+    MDR32F9Qx_uart.o           268
+    XXexit.o                    12
+    cexit.o                     10
+    cmain.o                     26
+    console.o                1 808      160      533
+    cstartup_M.o                12
+    data_init.o                 56
+    exit.o                       8
+    heap_2.o                   332        6   17 432
+    image.o                    708    3 856       16
+    ks.o                       160      512
+    lcd.o                    1 158                 2
+    led.o                      164                 4
+    list.o                     152
+    low_level_init.o           120
+    main.o                     896      620       20
+    mlink.o                  3 242      360       24
+    otimer.o                   288       12       12
+    output.o                 2 724      636    3 228
+    port.o                     604        4       16
+    portasm.o                  136
+    queue.o                  1 630
+    restart.o                  140      364
+    serial.o                   718               528
+    spi.o                      684       56       76
+    tasks.o                  3 272       12      264
+    timers.o                 1 082        8       60
+    vector_table_M.o           320
+    ------------------------------------------------
+    Total:                  21 618    6 606   22 215
+
+command line: [2]
+    ------------------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    abort.o                      6
+    isdigit.o                   10
+    ------------------------------------------------
+    Total:                      16
+
+rt7M_tl.a: [4]
+    ABImemcpy_unaligned.o      118
+    ABImemset.o                102
+    copy_init3.o                44
+    zero_init3.o                64
+    ------------------------------------------------
+    Total:                     328
+
+shb_l.a: [5]
+    ABIassert.o                 36
+    ------------------------------------------------
+    Total:                      36
+
+    Gaps                        22        2
+    Linker created                       36    4 096
+----------------------------------------------------
+    Grand Total:            22 020    6 644   26 311
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                      Address    Size  Type      Object
+-----                      -------    ----  ----      ------
+.iar.init_table$$Base   0x080069e0           --   Gb  - Linker created -
+.iar.init_table$$Limit  0x08006a04           --   Gb  - Linker created -
+?main                   0x08006ba1          Code  Gb  cmain.o [1]
+CON_UART                0x20006654     0x4  Data  Lc  console.o [1]
+CON_UART_HandlerWork    0x080036dd    0x4a  Code  Gb  console.o [1]
+CSTACK$$Base            0x20000030           --   Gb  - Linker created -
+CSTACK$$Length          0x00001000           --   Gb  - Linker created -
+CSTACK$$Limit           0x20001030           --   Gb  - Linker created -
+CurrentCrystal          0x200066c9     0x1  Data  Gb  lcd.o [1]
+CurrentLights           0x20006660     0x4  Data  Gb  led.o [1]
+CurrentMethod           0x200066ca     0x1  Data  Gb  lcd.o [1]
+FAddr_GetPtr            0x08006869     0x6  Code  Lc  data_init.o [1]
+Frequency_CLK_PLL       0x0800662d    0x4c  Code  Gb  low_level_init.o [1]
+GetConsoleName          0x08003bdb    0x12  Code  Gb  console.o [1]
+GetStatus               0x08004979    0x14  Code  Lc  lcd.o [1]
+InitPortLCD             0x08004631   0x100  Code  Gb  lcd.o [1]
+InitPortLED             0x08006589    0x3e  Code  Gb  led.o [1]
+LCD_CLS                 0x08004927    0x52  Code  Gb  lcd.o [1]
+LCD_INIT                0x080048f1    0x36  Code  Gb  lcd.o [1]
+LDM_IMAGE               0x08004ccc   0x3c0  Data  Lc  image.o [1]
+LKS                     0x0800638c   0x100  Data  Lc  ks.o [1]
+LightsOn                0x080065f9    0x1a  Code  Gb  led.o [1]
+MELT_IMAGE              0x0800580c   0x3c0  Data  Lc  image.o [1]
+MILANDR_IMAGE           0x0800508c   0x3c0  Data  Lc  image.o [1]
+NVIC_DisableIRQ         0x0800364f    0x16  Code  Lc  console.o [1]
+NVIC_EnableIRQ          0x08003639    0x16  Code  Lc  console.o [1]
+NVIC_EnableIRQ          0x08003e01    0x14  Code  Lc  serial.o [1]
+NVIC_EnableIRQ          0x08005f4d    0x14  Code  Lc  spi.o [1]
+PHYTON_IMAGE            0x0800544c   0x3c0  Data  Lc  image.o [1]
+PORT_Init               0x08004431   0x138  Code  Gb  MDR32F9Qx_port.o [1]
+Pause                   0x080049a5     0xe  Code  Lc  lcd.o [1]
+PendSV_Handler          0x0800166d          Code  Gb  portasm.o [1]
+PrintImage              0x08004a09   0x2c4  Code  Gb  image.o [1]
+READ_DATA               0x080045cf    0x1a  Code  Gb  lcd.o [1]
+RST_CLK_GetClocksFreq   0x080042af   0x162  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+RST_CLK_GetCpuClock     0x08003771    0x74  Code  Gb  console.o [1]
+RST_CLK_HSIcmd          0x08004285     0xa  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+RST_CLK_PCLKcmd         0x0800428f    0x20  Code  Gb  MDR32F9Qx_rst_clk.o [1]
+ReadLCD_Cmd             0x08004833    0x62  Code  Gb  lcd.o [1]
+Region$$Table$$Base     0x080069e0           --   Gb  - Linker created -
+Region$$Table$$Limit    0x08006a04           --   Gb  - Linker created -
+ResetLCD                0x080045e9    0x48  Code  Gb  lcd.o [1]
+SKS                     0x0800628c   0x100  Data  Lc  ks.o [1]
+SPI_HandlerWork         0x08005fc3    0x5c  Code  Gb  spi.o [1]
+SSP1_IRQHandler         0x0800601f     0x8  Code  Gb  spi.o [1]
+SSP_BRGInit             0x08006251    0x2e  Code  Gb  MDR32F9Qx_ssp.o [1]
+SSP_Cmd                 0x0800621d    0x1c  Code  Gb  MDR32F9Qx_ssp.o [1]
+SSP_ITConfig            0x08006239    0x18  Code  Gb  MDR32F9Qx_ssp.o [1]
+SSP_Init                0x080061f9    0x24  Code  Gb  MDR32F9Qx_ssp.o [1]
+SVC_Handler             0x080016b3          Code  Gb  portasm.o [1]
+SetCrystal              0x08004731    0x3e  Code  Gb  lcd.o [1]
+ShiftLights             0x080065c7    0x32  Code  Gb  led.o [1]
+ShowLCD                 0x080049b3    0x44  Code  Gb  lcd.o [1]
+SysTick_Handler         0x08001067    0x28  Code  Gb  port.o [1]
+UART                    0x20006674     0x4  Data  Lc  serial.o [1]
+UART1_IRQHandler        0x08003727     0x8  Code  Gb  console.o [1]
+UART2_IRQHandler        0x08003eaf     0x8  Code  Gb  serial.o [1]
+UART_BRGInit            0x08004247    0x2e  Code  Gb  MDR32F9Qx_uart.o [1]
+UART_Cmd                0x08004213    0x1c  Code  Gb  MDR32F9Qx_uart.o [1]
+UART_HandlerWork        0x08003e6d    0x42  Code  Gb  serial.o [1]
+UART_ITConfig           0x0800422f    0x18  Code  Gb  MDR32F9Qx_uart.o [1]
+UART_Init               0x08004179    0x9a  Code  Gb  MDR32F9Qx_uart.o [1]
+WRITE_DATA              0x08004581    0x4e  Code  Gb  lcd.o [1]
+WaitStatus              0x0800498d    0x18  Code  Lc  lcd.o [1]
+WriteLCD_Cmd            0x0800476f    0x62  Code  Gb  lcd.o [1]
+WriteLCD_Data           0x080047d1    0x62  Code  Gb  lcd.o [1]
+__aeabi_assert          0x080034e1    0x24  Code  Gb  ABIassert.o [5]
+__aeabi_memset          0x08000f6d          Code  Gb  ABImemset.o [4]
+__cmain                 0x08006ba1          Code  Gb  cmain.o [1]
+__exit                  0x08004575          Code  Gb  XXexit.o [1]
+__gets                  0x08003cbd    0x8c  Code  Gb  console.o [1]
+__iar_Memset            0x08000f6d          Code  Gb  ABImemset.o [4]
+__iar_Memset_word       0x08000f75          Code  Gb  ABImemset.o [4]
+__iar_copy_init3        0x080068cd    0x2c  Code  Gb  copy_init3.o [4]
+__iar_data_init3        0x08006871    0x30  Code  Gb  data_init.o [1]
+__iar_program_start     0x08006ee5          Code  Gb  cstartup_M.o [1]
+__iar_unaligned___aeabi_memcpy
+                        0x08001d55          Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned___aeabi_memcpy4
+                        0x08001d75          Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_unaligned___aeabi_memcpy8
+                        0x08001d75          Code  Gb  ABImemcpy_unaligned.o [4]
+__iar_zero_init3        0x080067ed    0x40  Code  Gb  zero_init3.o [4]
+__low_level_init        0x08006679    0x14  Code  Gb  low_level_init.o [1]
+__vector_table          0x08000000          Data  Gb  vector_table_M.o [1]
+_call_main              0x08006bad          Code  Gb  cmain.o [1]
+_exit                   0x08006bc5          Code  Gb  cexit.o [1]
+_main                   0x08006bb7          Code  Gb  cmain.o [1]
+abort                   0x08004171     0x6  Code  Gb  abort.o [3]
+app                     0x20005430   0x894  Data  Lc  output.o [1]
+app_init                0x08002de1    0x32  Code  Gb  output.o [1]
+app_msg_q_clear         0x08002dcb    0x16  Code  Lc  output.o [1]
+app_msg_q_get           0x08002cf7    0x6a  Code  Lc  output.o [1]
+app_msg_q_init          0x08002c87    0x2a  Code  Lc  output.o [1]
+app_msg_q_put           0x08002cb1    0x46  Code  Lc  output.o [1]
+app_msg_q_wait          0x08002d61    0x6a  Code  Lc  output.o [1]
+app_rx_buf              0x20005cc4   0x400  Data  Lc  output.o [1]
+app_start               0x08002e13    0x5a  Code  Gb  output.o [1]
+app_stop                0x08002e6d    0x38  Code  Gb  output.o [1]
+app_thread_rx           0x08002ef9    0x3c  Code  Lc  output.o [1]
+banner                  0x080049f7    0x10  Code  Gb  lcd.o [1]
+console                 0x200060c4   0x20c  Data  Lc  console.o [1]
+console_init            0x080037e5   0x114  Code  Gb  console.o [1]
+console_set_poll_mode   0x08003bed    0x16  Code  Gb  console.o [1]
+dbg_print_mode          0x200066c8     0x1  Data  Lc  console.o [1]
+dbg_put                 0x08003c03    0x56  Code  Gb  console.o [1]
+eTaskConfirmSleepModeStatus
+                        0x0800097f    0x46  Code  Gb  tasks.o [1]
+end_cmd                 0x08003363    0xee  Code  Gb  output.o [1]
+exit                    0x08006bbb     0x8  Code  Gb  exit.o [1]
+fletcher_make           0x0800220d    0x62  Code  Gb  mlink.o [1]
+fletcher_put            0x08002191    0x7c  Code  Gb  mlink.o [1]
+g_link                  0x20000014    0x10  Data  Lc  mlink.o [1]
+get_byte                0x08004063    0x36  Code  Gb  serial.o [1]
+get_ksum_l              0x080040d1    0xa0  Code  Gb  ks.o [1]
+getc                    0x08003cb1     0xc  Code  Gb  console.o [1]
+getch                   0x0800372f    0x42  Code  Gb  console.o [1]
+hard_reset              0x08003d59    0x16  Code  Gb  restart.o [1]
+heapSTRUCT_SIZE         0x08000fd2     0x2  Data  Lc  heap_2.o [1]
+irq_rx                  0x08003665    0x44  Code  Lc  console.o [1]
+irq_rx                  0x08003e15    0x2c  Code  Lc  serial.o [1]
+irq_rx                  0x08005f61    0x30  Code  Lc  spi.o [1]
+irq_tx                  0x080036a9    0x34  Code  Lc  console.o [1]
+irq_tx                  0x08003e41    0x2c  Code  Lc  serial.o [1]
+irq_tx                  0x08005f91    0x32  Code  Lc  spi.o [1]
+isdigit                 0x08004569     0xa  Code  Gb  isdigit.o [3]
+ledHandle               0x20006664     0x4  Data  Gb  main.o [1]
+link_B                  0x08001e31    0x22  Code  Lc  mlink.o [1]
+link_callback_B         0x08002c17     0x2  Code  Gb  output.o [1]
+link_callback_check_for_tx
+                        0x08002c85     0x2  Code  Gb  output.o [1]
+link_callback_d_st      0x08002bc5    0x52  Code  Gb  output.o [1]
+link_callback_rx        0x08002c19    0x3e  Code  Gb  output.o [1]
+link_callback_st        0x08002b7f    0x46  Code  Gb  output.o [1]
+link_callback_tx_bytes  0x08002c57    0x2e  Code  Gb  output.o [1]
+link_cancel_rq_tx       0x08002439    0x32  Code  Lc  mlink.o [1]
+link_check_for_tx       0x0800246b    0x82  Code  Gb  mlink.o [1]
+link_check_ks           0x08001f77    0x3e  Code  Gb  mlink.o [1]
+link_d_st               0x08001e1b    0x16  Code  Lc  mlink.o [1]
+link_msg_del            0x080029d5    0x54  Code  Gb  mlink.o [1]
+link_msg_new            0x08002983    0x4a  Code  Gb  mlink.o [1]
+link_ph_layer_up        0x08001f2d    0x4a  Code  Gb  mlink.o [1]
+link_put_msg            0x080028af    0xd4  Code  Gb  mlink.o [1]
+link_rx_machin_init     0x08001fb5    0x16  Code  Gb  mlink.o [1]
+link_rx_msg             0x080025a5   0x198  Code  Gb  mlink.o [1]
+link_send               0x0800226f   0x16c  Code  Gb  mlink.o [1]
+link_st                 0x08001e07    0x14  Code  Lc  mlink.o [1]
+link_start              0x08001e53    0x2a  Code  Gb  mlink.o [1]
+link_stop               0x08001e7d    0xb0  Code  Gb  mlink.o [1]
+link_timeout            0x0800273d   0x172  Code  Lc  mlink.o [1]
+link_tx_c               0x0800254b    0x5a  Code  Lc  mlink.o [1]
+link_tx_d               0x080024ed    0x5e  Code  Lc  mlink.o [1]
+link_want_tx            0x080023db    0x5a  Code  Lc  mlink.o [1]
+list_add                0x08003d49     0xe  Code  Gb  output.o [1]
+list_add_head           0x08003df3     0xe  Code  Gb  mlink.o [1]
+list_init               0x08002a69     0x6  Code  Gb  output.o [1]
+list_is_empty           0x08003de5     0xe  Code  Gb  output.o [1]
+list_remove             0x08003625    0x12  Code  Gb  output.o [1]
+lmsg_stat               0x20006644     0x8  Data  Gb  mlink.o [1]
+loop_cmd                0x08003065   0x178  Code  Gb  output.o [1]
+main                    0x08005e77    0x46  Code  Gb  main.o [1]
+mask                    0x2000664c     0x8  Data  Lc  output.o [1]
+mlink_init              0x08001dcd    0x3a  Code  Gb  mlink.o [1]
+mlink_read              0x08002ea5    0x50  Code  Lc  output.o [1]
+mlink_rx_bytes          0x08001fcb   0x1c6  Code  Gb  mlink.o [1]
+otimer_start            0x08003517    0xb6  Code  Gb  otimer.o [1]
+otimer_stop             0x080035cd    0x44  Code  Gb  otimer.o [1]
+print_result            0x08002a71    0x3c  Code  Gb  output.o [1]
+printf                  0x080039a7   0x234  Code  Gb  console.o [1]
+printf::X2C_tab         0x08006cd4    0x14  Data  Lc  console.o [1]
+printf::x2c_tab         0x08006ce8    0x14  Data  Lc  console.o [1]
+props                   0x20006618    0x10  Data  Gb  main.o [1]
+props_cmd               0x080031e5   0x17e  Code  Gb  output.o [1]
+prvAddCurrentTaskToDelayedList
+                        0x08000cc9    0x80  Code  Lc  tasks.o [1]
+prvAddNewTaskToReadyList
+                        0x080001df    0xb8  Code  Lc  tasks.o [1]
+prvCheckForValidListAndQueue
+                        0x080015a7    0x3a  Code  Lc  timers.o [1]
+prvCheckTasksWaitingTermination
+                        0x08000a2d    0x40  Code  Lc  tasks.o [1]
+prvCopyDataFromQueue    0x08001c37    0x2a  Code  Lc  queue.o [1]
+prvCopyDataToQueue      0x08001bb1    0x86  Code  Lc  queue.o [1]
+prvDeleteTCB            0x08000a6d    0x12  Code  Lc  tasks.o [1]
+prvGetDisinheritPriorityAfterTimeout
+                        0x08001b9d    0x14  Code  Lc  queue.o [1]
+prvGetExpectedIdleTime  0x0800058d    0x46  Code  Lc  tasks.o [1]
+prvGetNextExpireTime    0x080013c9    0x26  Code  Lc  timers.o [1]
+prvHeapInit             0x08000e91    0x2a  Code  Lc  heap_2.o [1]
+prvIdleTask             0x08000941    0x3e  Code  Lc  tasks.o [1]
+prvInitialiseMutex      0x080017bd    0x1e  Code  Lc  queue.o [1]
+prvInitialiseNewQueue   0x080017a1    0x1c  Code  Lc  queue.o [1]
+prvInitialiseNewTask    0x08000137    0xa8  Code  Lc  tasks.o [1]
+prvInitialiseNewTimer   0x0800124b    0x48  Code  Lc  timers.o [1]
+prvInitialiseTaskLists  0x080009cd    0x54  Code  Lc  tasks.o [1]
+prvInsertTimerInActiveList
+                        0x08001417    0x3e  Code  Lc  timers.o [1]
+prvIsQueueEmpty         0x08001ccf    0x1c  Code  Lc  queue.o [1]
+prvIsQueueFull          0x08001ceb    0x1e  Code  Lc  queue.o [1]
+prvProcessExpiredTimer  0x080012ed    0x56  Code  Lc  timers.o [1]
+prvProcessReceivedCommands
+                        0x08001455    0xe6  Code  Lc  timers.o [1]
+prvProcessTimerOrBlockTask
+                        0x08001359    0x70  Code  Lc  timers.o [1]
+prvResetNextTaskUnblockTime
+                        0x08000a7f    0x2a  Code  Lc  tasks.o [1]
+prvSampleTimeNow        0x080013ef    0x28  Code  Lc  timers.o [1]
+prvSampleTimeNow::xLastTime
+                        0x200066c4     0x4  Data  Lc  timers.o [1]
+prvSwitchTimerLists     0x0800153b    0x6c  Code  Lc  timers.o [1]
+prvTaskExitError        0x08000ff5    0x10  Code  Lc  port.o [1]
+prvTaskIsTaskSuspended  0x0800046b    0x22  Code  Lc  tasks.o [1]
+prvTimerTask            0x08001345    0x14  Code  Lc  timers.o [1]
+prvUnlockQueue          0x08001c61    0x6e  Code  Lc  queue.o [1]
+pthread_cancel          0x08002aad     0xa  Code  Gb  output.o [1]
+pthread_mutex_init      0x08002ab7    0x1c  Code  Gb  output.o [1]
+pthread_mutex_lock      0x08002ad3    0x1c  Code  Gb  output.o [1]
+pthread_mutex_unlock    0x08002aef    0x1e  Code  Gb  output.o [1]
+putk                    0x080038f9    0xae  Code  Gb  console.o [1]
+pvPortMalloc            0x08000d89    0xcc  Code  Gb  heap_2.o [1]
+pvPortMalloc::xHeapHasBeenInitialised
+                        0x2000665c     0x4  Data  Lc  heap_2.o [1]
+pvTaskIncrementMutexHeldCount
+                        0x08000c81    0x1e  Code  Gb  tasks.o [1]
+pvTimerGetTimerID       0x08001605    0x12  Code  Gb  timers.o [1]
+pxCurrentTCB            0x20006678     0x4  Data  Gb  tasks.o [1]
+pxCurrentTimerList      0x200066b4     0x4  Data  Lc  timers.o [1]
+pxDelayedTaskList       0x2000667c     0x4  Data  Lc  tasks.o [1]
+pxOverflowDelayedTaskList
+                        0x20006680     0x4  Data  Lc  tasks.o [1]
+pxOverflowTimerList     0x200066b8     0x4  Data  Lc  timers.o [1]
+pxPortInitialiseStack   0x08000fd5    0x20  Code  Gb  port.o [1]
+pxReadyTasksLists       0x200064dc    0x64  Data  Lc  tasks.o [1]
+restart                 0x08003d6f    0x5e  Code  Gb  restart.o [1]
+rst_map                 0x08006784    0x68  Data  Gb  restart.o [1]
+rxirq_count             0x20006658     0x4  Data  Gb  console.o [1]
+sem_init                0x08002b0d    0x20  Code  Gb  output.o [1]
+sem_post                0x08002b2d    0x1e  Code  Gb  output.o [1]
+sem_timedwait           0x08002b63    0x1c  Code  Gb  output.o [1]
+sem_trywait             0x08002b4b    0x18  Code  Gb  output.o [1]
+serial                  0x200062d0   0x20c  Data  Lc  serial.o [1]
+serial_close            0x08003faf    0x2a  Code  Gb  serial.o [1]
+serial_init             0x08003eb7    0xf8  Code  Gb  serial.o [1]
+serial_read             0x080040b1    0x1e  Code  Gb  serial.o [1]
+serial_send_block       0x0800403d    0x18  Code  Gb  serial.o [1]
+serial_send_byte        0x08003fd9    0x64  Code  Gb  serial.o [1]
+serial_write            0x08004055     0xe  Code  Gb  serial.o [1]
+show_info               0x08005bcd    0x40  Code  Gb  main.o [1]
+show_link_err           0x08002f35    0x2e  Code  Gb  output.o [1]
+sigev_notify_function   0x08003505    0x12  Code  Lc  otimer.o [1]
+size_x                  0x20000004    0x10  Data  Gb  image.o [1]
+spi                     0x20006540    0x4c  Data  Lc  spi.o [1]
+spi_getch               0x08006143    0x3a  Code  Gb  spi.o [1]
+spi_init                0x08006027    0xba  Code  Gb  spi.o [1]
+spi_send                0x080060e1    0x62  Code  Gb  spi.o [1]
+spi_test                0x0800617d    0x50  Code  Gb  spi.o [1]
+sync_cmd                0x08002f63   0x102  Code  Gb  output.o [1]
+thread_main             0x08005c0d   0x26a  Code  Lc  main.o [1]
+timer_stat              0x20006628     0xc  Data  Gb  otimer.o [1]
+ucHeap                  0x20001030  0x4400  Data  Lc  heap_2.o [1]
+ulStoppedTimerCompensation
+                        0x20006670     0x4  Data  Lc  port.o [1]
+ulTimerCountsForOneTick
+                        0x20006668     0x4  Data  Lc  port.o [1]
+uxCriticalNesting       0x20000024     0x4  Data  Lc  port.o [1]
+uxCurrentNumberOfTasks  0x20006688     0x4  Data  Lc  tasks.o [1]
+uxDeletedTasksWaitingCleanUp
+                        0x20006684     0x4  Data  Lc  tasks.o [1]
+uxListRemove            0x08000f47    0x26  Code  Gb  list.o [1]
+uxSchedulerSuspended    0x200066b0     0x4  Data  Lc  tasks.o [1]
+uxTaskNumber            0x200066a4     0x4  Data  Lc  tasks.o [1]
+uxTopReadyPriority      0x20006690     0x4  Data  Lc  tasks.o [1]
+uxTopUsedPriority       0x20000028     0x4  Data  Gb  tasks.o [1]
+vListInitialise         0x08000ed5    0x1e  Code  Gb  list.o [1]
+vListInitialiseItem     0x08000ef3     0x6  Code  Gb  list.o [1]
+vListInsert             0x08000f11    0x36  Code  Gb  list.o [1]
+vListInsertEnd          0x08000ef9    0x18  Code  Gb  list.o [1]
+vPortEndScheduler       0x08001031     0x2  Code  Gb  port.o [1]
+vPortEnterCritical      0x08001033    0x1a  Code  Gb  port.o [1]
+vPortExitCritical       0x0800104d    0x1a  Code  Gb  port.o [1]
+vPortFree               0x08000e55    0x3c  Code  Gb  heap_2.o [1]
+vPortSetupTimerInterrupt
+                        0x08001619    0x54  Code  Wk  port.o [1]
+vPortStartFirstTask     0x080016d3          Code  Gb  portasm.o [1]
+vPortSuppressTicksAndSleep
+                        0x0800109d   0x140  Code  Wk  port.o [1]
+vQueueDelete            0x08001b95     0x8  Code  Gb  queue.o [1]
+vQueueWaitForMessageRestricted
+                        0x08001d09    0x4a  Code  Gb  queue.o [1]
+vTaskDelay              0x0800035d    0x32  Code  Gb  tasks.o [1]
+vTaskDelete             0x08000297    0xc6  Code  Gb  tasks.o [1]
+vTaskEndScheduler       0x0800055f    0x1e  Code  Gb  tasks.o [1]
+vTaskInternalSetTimeOutState
+                        0x080008c7    0x12  Code  Gb  tasks.o [1]
+vTaskMissedYield        0x08000935     0xa  Code  Gb  tasks.o [1]
+vTaskPlaceOnEventList   0x0800081d    0x1a  Code  Gb  tasks.o [1]
+vTaskPlaceOnEventListRestricted
+                        0x08000837    0x24  Code  Gb  tasks.o [1]
+vTaskPriorityDisinheritAfterTimeout
+                        0x08000bf9    0x84  Code  Gb  tasks.o [1]
+vTaskResume             0x0800048d    0x72  Code  Gb  tasks.o [1]
+vTaskStartScheduler     0x080004ff    0x60  Code  Gb  tasks.o [1]
+vTaskStepTick           0x080006bb    0x10  Code  Gb  tasks.o [1]
+vTaskSuspend            0x0800038f    0xdc  Code  Gb  tasks.o [1]
+vTaskSuspendAll         0x0800057d    0x10  Code  Gb  tasks.o [1]
+vTaskSwitchContext      0x080007cd    0x50  Code  Gb  tasks.o [1]
+xActiveTimerList1       0x200065f0    0x14  Data  Lc  timers.o [1]
+xActiveTimerList2       0x20006604    0x14  Data  Lc  timers.o [1]
+xDelayedTaskList1       0x2000658c    0x14  Data  Lc  tasks.o [1]
+xDelayedTaskList2       0x200065a0    0x14  Data  Lc  tasks.o [1]
+xEnd                    0x2000663c     0x8  Data  Lc  heap_2.o [1]
+xFreeBytesRemaining     0x20000000     0x4  Data  Lc  heap_2.o [1]
+xIdleTaskHandle         0x200066ac     0x4  Data  Lc  tasks.o [1]
+xMaximumPossibleSuppressedTicks
+                        0x2000666c     0x4  Data  Lc  port.o [1]
+xNextTaskUnblockTime    0x200066a8     0x4  Data  Lc  tasks.o [1]
+xNumOfOverflows         0x200066a0     0x4  Data  Lc  tasks.o [1]
+xPendedTicks            0x20006698     0x4  Data  Lc  tasks.o [1]
+xPendingReadyList       0x200065b4    0x14  Data  Lc  tasks.o [1]
+xPortStartScheduler     0x08001005    0x2c  Code  Gb  port.o [1]
+xQueueCreateMutex       0x080017db    0x1c  Code  Gb  queue.o [1]
+xQueueGenericCreate     0x08001773    0x2e  Code  Gb  queue.o [1]
+xQueueGenericReset      0x080016f5    0x7e  Code  Gb  queue.o [1]
+xQueueGenericSend       0x080017f7   0x10e  Code  Gb  queue.o [1]
+xQueueGenericSendFromISR
+                        0x08001905    0x68  Code  Gb  queue.o [1]
+xQueueReceive           0x0800196d    0xf6  Code  Gb  queue.o [1]
+xQueueSemaphoreTake     0x08001a63   0x12e  Code  Gb  queue.o [1]
+xSchedulerRunning       0x20006694     0x4  Data  Lc  tasks.o [1]
+xStart                  0x20006634     0x8  Data  Lc  heap_2.o [1]
+xSuspendedTaskList      0x200065dc    0x14  Data  Lc  tasks.o [1]
+xTaskCheckForTimeOut    0x080008d9    0x5c  Code  Gb  tasks.o [1]
+xTaskCreate             0x080000c1    0x76  Code  Gb  tasks.o [1]
+xTaskGetSchedulerState  0x08000aad    0x20  Code  Gb  tasks.o [1]
+xTaskGetTickCount       0x080006b3     0x8  Code  Gb  tasks.o [1]
+xTaskIncrementTick      0x080006cb   0x102  Code  Gb  tasks.o [1]
+xTaskPriorityDisinherit
+                        0x08000b87    0x72  Code  Gb  tasks.o [1]
+xTaskPriorityInherit    0x08000ad9    0xae  Code  Gb  tasks.o [1]
+xTaskRemoveFromEventList
+                        0x0800085b    0x6c  Code  Gb  tasks.o [1]
+xTaskResumeAll          0x080005d3    0xe0  Code  Gb  tasks.o [1]
+xTasksWaitingTermination
+                        0x200065c8    0x14  Data  Lc  tasks.o [1]
+xTickCount              0x2000668c     0x4  Data  Lc  tasks.o [1]
+xTimerCreate            0x08001211    0x3a  Code  Gb  timers.o [1]
+xTimerCreateTimerTask   0x080011dd    0x34  Code  Gb  timers.o [1]
+xTimerGenericCommand    0x08001293    0x5a  Code  Gb  timers.o [1]
+xTimerQueue             0x200066bc     0x4  Data  Lc  timers.o [1]
+xTimerTaskHandle        0x200066c0     0x4  Data  Lc  timers.o [1]
+xYieldPending           0x2000669c     0x4  Data  Lc  tasks.o [1]
+
+
+[1] = E:\Zh\Cortex\soft\mn353_mdr\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = rt7M_tl.a
+[5] = shb_l.a
+
+  22 020 bytes of readonly  code memory
+   6 644 bytes of readonly  data memory
+  26 311 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
